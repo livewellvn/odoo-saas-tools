@@ -47,6 +47,7 @@ class SaasServer(http.Controller):
         lang = state.get('lang', 'en_US')
         tz = state.get('tz')
         addons = state.get('addons', [])
+        company_data = state.get('company_data', {})
         is_template_db = state.get('is_template_db')
         action = 'base.open_module_tree'
         access_token = post['access_token']
@@ -71,6 +72,7 @@ class SaasServer(http.Controller):
             owner_user=owner_user,
             is_template_db=is_template_db,
             access_token=access_token,
+            company_data = company_data
             server_requests_scheme=request.httprequest.scheme)
 
         if is_template_db:
