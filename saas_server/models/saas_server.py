@@ -10,7 +10,7 @@ import psycopg2
 import random
 import string
 
-from openerp.addons.saas_portal_start_wizard.utils import _levenshtein, acronym
+# from openerp.addons.saas_portal_start_wizard.utils import _levenshtein, acronym
 
 import logging
 _logger = logging.getLogger(__name__)
