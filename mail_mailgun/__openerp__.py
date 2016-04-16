@@ -8,11 +8,5 @@
     'version': '1.0.0',
     'depends': ['mail'],
     'data': [
-        'views/product_template.xml',
-        'views/product_view.xml',
-        'views/saas_portal.xml',
-        'views/account_invoice.xml',
-        'data/mail_template_data.xml',
-        'data/ir_config_parameter.xml',
     ],
 }
