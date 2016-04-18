@@ -14,7 +14,7 @@ class MailMailgun(http.Controller):
     def incoming_mail_mime(self, **kw):
         print '\n\n\n', 'in incoming_mail_mime ', 'kw ', kw, '\n\n\n\n'
         body_mime = kw.get('body-mime')
-        mail_thread_obj = request.env['mail.theread']
+        mail_thread_obj = request.env['mail.thread']
         msg_dict = mail_thread_obj.message_parse(body_mime)
         print '\n\n\n', 'msg_dict ', msg_dict, '\n\n\n'
 
