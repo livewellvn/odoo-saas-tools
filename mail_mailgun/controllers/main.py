@@ -17,4 +17,6 @@ class MailMailgun(http.Controller):
         mail_thread_obj = request.env['mail.thread']
         msg_dict = mail_thread_obj.message_parse(body_mime)
         print '\n\n\n', 'msg_dict ', msg_dict, '\n\n\n'
+        msg_id = msg_dict.get('message_id')
+        print '\n\n\n', 'msg_id ', msg_id, '\n\n\n'
 
