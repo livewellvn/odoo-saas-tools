@@ -22,7 +22,7 @@ class MailMailgun(http.Controller):
         # msg_id = msg_dict.get('message_id')
         # print '\n\n\n', 'msg_id ', msg_id, '\n\n\n'
         # mail_thread_obj.message_new(msg_dict)
-        res_id = mail_thread.message_process('res.partner', mody_mime)
+        res_id = mail_thread.message_process('res.partner', body_mime)
         print '\n\n\n', 'res_id ', res_id, '\n\n\n'
 
 
