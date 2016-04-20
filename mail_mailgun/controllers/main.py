@@ -8,7 +8,7 @@ import requests
 
 class MailMailgun(http.Controller):
 
-    def get_logs():
+    def get_logs(self):
         return requests.get(
         "https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/events",
         auth=("api", "key-8345fd06eeb8b27a3b1f9a1e025519ad"),
