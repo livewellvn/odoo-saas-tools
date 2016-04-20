@@ -12,10 +12,11 @@ class MailMailgun(http.Controller):
         return requests.get(
         "https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/events",
         auth=("api", "key-8345fd06eeb8b27a3b1f9a1e025519ad"),
-        params={
+        params={"begin"       : "Fri, 3 May 2013 09:00:00 -0000",
                 "ascending"   : "yes",
                 "limit"       :  25,
                 "pretty"      : "yes",
+                "recipient" : "admin@iledarn.ru"
                 })
 
     @http.route('/mail_mailgun', auth='public', csrf=False)
