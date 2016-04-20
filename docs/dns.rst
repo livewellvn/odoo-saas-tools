@@ -19,13 +19,13 @@ Example:
 When Portal, Server and Clients on the same IP we can add the following records.
 
 Portal
-******
+------
 Type: A
 Name: exmaple.com
 IP: 40.50.70.28
 
 Server, Clients
-***************
+---------------
 Type: A
 Name: *.example.com
 IP: 40.50.70.28
