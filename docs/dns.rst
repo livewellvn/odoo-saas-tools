@@ -18,8 +18,19 @@ We need several records.
  * Type 'A' for servers
  * Type 'A' for clients
 
- For all third-level client's domains we may add just one type 'A' record.
- E.g. *.some-server.org
+ Example:
+ When Portal, Server and Clients on the same IP we can add the following records.
+  * Portal
+ Type: A
+ Name: exmaple.com
+ IP: 40.50.70.28
+  * Server, Clients
+ Type: A
+ Name: *.example.com
+ IP: 40.50.70.28
+ 
+ 
+
 
 
 
