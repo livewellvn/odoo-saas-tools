@@ -29,8 +29,11 @@ class MailMailgun(http.Controller):
         items = logs_obj.get('items')
         print '\n\n\n', 'logs ', logs, '\n\n\n'
         print '\n\n\n', 'logs_obj ', logs_obj, '\n\n\n'
+        counter = 1
         for item in items:
-            print '\nItem:\n'
+            mes = 'Item ' + counter
+            counter = counter + 1
+            print '\n', mes, '\n'
             print item
             print '\n'
 
