@@ -21,14 +21,17 @@ When Portal, Server and Clients on the same IP we can add the following records.
 If Portal is example.com then the record is
 
 Type: A
+
 Name: exmaple.com
+
 IP: 40.50.70.28
 
-If Server is server-1.example.com and Clients are client-001.example.com, client-002.example.com...
- We need to add just one record for them
+If Server is server-1.example.com and Clients are client-001.example.com, client-002.example.com... We need to add just one record for them
 
 Type: A
+
 Name: *.example.com
+
 IP: 40.50.70.28
  
  
