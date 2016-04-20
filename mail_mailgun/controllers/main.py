@@ -26,8 +26,13 @@ class MailMailgun(http.Controller):
         res = self.get_logs()
         logs = res.text
         logs_obj = simplejson.loads(logs)
+        items = logs_obj.get('items')
         print '\n\n\n', 'logs ', logs, '\n\n\n'
         print '\n\n\n', 'logs_obj ', logs_obj, '\n\n\n'
+        for item in items:
+            print '\nItem:\n'
+            print item
+            print '\n'
 
     @http.route('/mail_mailgun_mime', auth='public', csrf=False)
     def incoming_mail_mime(self, **kw):
