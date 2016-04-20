@@ -33,10 +33,10 @@ class MailMailgun(http.Controller):
         for item in items:
             mes = 'Item ' + str(counter)
             counter = counter + 1
-            print item['routes'][0]['actions']
-            print '\n', mes, '\n'
-            print item
-            print '\n'
+            if 'store' in item['routes'][0]['actions'][0]:
+                print '\n', mes, '\n'
+                print item
+                print '\n'
 
     @http.route('/mail_mailgun_mime', auth='public', csrf=False)
     def incoming_mail_mime(self, **kw):
