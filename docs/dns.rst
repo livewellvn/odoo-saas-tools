@@ -15,16 +15,20 @@ And here we can see how to add dns records https://www.godaddy.com/help/manage-d
 
 We need to add several Type 'A' records on our dns server.
 
- Example:
- When Portal, Server and Clients on the same IP we can add the following records.
-  * Portal
- Type: A
- Name: exmaple.com
- IP: 40.50.70.28
-  * Server, Clients
- Type: A
- Name: *.example.com
- IP: 40.50.70.28
+Example:
+When Portal, Server and Clients on the same IP we can add the following records.
+
+Portal
+******
+Type: A
+Name: exmaple.com
+IP: 40.50.70.28
+
+Server, Clients
+***************
+Type: A
+Name: *.example.com
+IP: 40.50.70.28
  
  
 
