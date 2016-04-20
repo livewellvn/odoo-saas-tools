@@ -31,7 +31,7 @@ class MailMailgun(http.Controller):
         print '\n\n\n', 'logs_obj ', logs_obj, '\n\n\n'
         counter = 1
         for item in items:
-            mes = 'Item ' + counter
+            mes = 'Item ' + str(counter)
             counter = counter + 1
             print '\n', mes, '\n'
             print item
