@@ -13,7 +13,7 @@ class MailMailgun(http.Controller):
         "https://api.mailgun.net/v3/iledarn.ru/events",
         auth=("api", "key-8345fd06eeb8b27a3b1f9a1e025519ad"),
         params={"begin"       : "Fri, 3 May 2013 09:00:00 -0000",
-                "ascending"   : "yes",
+                "ascending"   : "no",
                 "limit"       :  25,
                 "pretty"      : "yes",
                 "recipient" : "admin@iledarn.ru"
