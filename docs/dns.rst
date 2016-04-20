@@ -5,9 +5,9 @@ Domain names for SaaS
 Before we can use SaaS the domain names should be specified.
 Domain names may be specified different ways.
 The simpliest way in linux is to add lines on local file /etc/hosts.
-But this suits only for testing purposes and only on linux.
+But this suits only for testing purposes and only in linux.
 
-If we want our customers to be able to work with our servers through browsers then
+If we want our customers to be able to work with our servers through browser then
 we need DNS server such as https://www.godaddy.com.
 
 You can find general information about DNS systems here https://www.godaddy.com/help/what-is-dns-665.
@@ -15,8 +15,11 @@ And here we can see how to add dns records https://www.godaddy.com/help/manage-d
 
 We need several records.
  * Type'A' for Portal
- * Type 'A' for each of the servers
- *  
+ * Type 'A' for servers
+ * Type 'A' for clients
+
+ For all third-level client's domains we may add just one type 'A' record.
+ E.g. *.some-server.org
 
 
 
