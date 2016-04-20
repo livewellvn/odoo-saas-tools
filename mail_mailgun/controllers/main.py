@@ -4,6 +4,7 @@ from openerp.addons.web.http import request
 import werkzeug
 import email
 import requests
+import simplejson
 
 
 class MailMailgun(http.Controller):
@@ -24,7 +25,9 @@ class MailMailgun(http.Controller):
         print '\n\n\n', 'in incoming_mail ', 'kw ', kw, '\n\n\n\n'
         res = self.get_logs()
         logs = res.text
+        logs_obj = simplejson.loads(logs)
         print '\n\n\n', 'logs ', logs, '\n\n\n'
+        print '\n\n\n', 'logs_obj ', logs_obj, '\n\n\n'
 
     @http.route('/mail_mailgun_mime', auth='public', csrf=False)
     def incoming_mail_mime(self, **kw):
