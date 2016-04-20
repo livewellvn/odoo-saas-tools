@@ -33,6 +33,7 @@ class MailMailgun(http.Controller):
         for item in items:
             mes = 'Item ' + str(counter)
             counter = counter + 1
+            print item['routes'][0]['actions']
             print '\n', mes, '\n'
             print item
             print '\n'
