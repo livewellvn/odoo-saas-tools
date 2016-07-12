@@ -52,8 +52,8 @@ Used by
 
 * `saas_portal_sale_online <../saas_portal_sale_online/>`_
   
-website_sale_require_login
---------------------------
+access_limit_records_number
+---------------------------
 
   The module can be found here: https://github.com/it-projects-llc/access-addons/tree/9.0/access_limit_records_number
   
