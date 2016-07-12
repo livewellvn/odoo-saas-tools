@@ -112,7 +112,7 @@ class SaasConfigParam(models.TransientModel):
 
     def _get_keys(self):
         return [
-            ('saas_client.max_users', 'Max Users'),
+            ('saas_client.max_users', 'Max Users'), # this parameter is obsolete. use access_limit_records_number module
             ('saas_client.suspended', 'Suspended'),
             ('saas_client.total_storage_limit', 'Total storage limit'),
         ]
