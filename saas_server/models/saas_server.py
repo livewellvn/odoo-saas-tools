@@ -281,7 +281,7 @@ class SaasServerClient(models.Model):
 
         # 6. Access rights
         access_owner_add = post.get('access_owner_add', [])
-        owner_id = client_env['ir.config_parameter'].get_param('.users.owner', 0)
+        owner_id = client_env['ir.config_parameter'].get_param('res.users.owner', 0)
         owner_id = int(owner_id)
         if not owner_id:
             res['owner_id'] = "Owner's user is not found"
