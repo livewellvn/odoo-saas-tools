@@ -11,8 +11,9 @@ Amazon Route 53
 * See Amazon Route 53 FAQs here https://aws.amazon.com/route53/faqs/?nc1=h_ls
 As suggested in ``Q. How do I get started with Amazon Route 53?`` question you
 should first register your domain name.
-If you are expirienced in DNS you may register domain
-on any other DNS registrator, on https://www.godaddy.com for example
+
+If you are familiar with DNS then you may register domain
+on any other DNS registrator, for example, on https://www.godaddy.com 
 and then delegate it to Amazon Route 53.
 
 * install boto - python interface library to Amazon Web Services:
@@ -72,32 +73,44 @@ Here you should:
  Also you may check on https://console.aws.amazon.com/route53 that the Hosted Zone is created.
 
 
-Configure Incomming mails for clients
--------------------------------------
+Configuration in template database
+----------------------------------
+
+On Portal:
+* Open ``SaaS / SaaS / Plans`` and select the Plan where you want mail feature
+* Click ``[Log in to template DB]``. You should first allow pop-up windows from SaaS Portal in your browser settings.
+  
+In template database:
+* Activate debug mode
+* Open ``Settings / Technical / Email / Outgoing Mail Servers``
+* Select ``localhost`` configuration line and delete it using ``[Action]`` button
 
 The steps above guarantee only Outgoing mails.
 If you want your clients not only send but receive mails, i.e. Incomming mails,
 you should do the following:
 
-* Open ``SaaS / SaaS / Plans`` and select the Plan where you want mail feature
-* Click ``[Log in to template DB]``. You should first allow pop-up windows from SaaS Portal in your browser settings.
 * In template database install this module https://github.com/it-projects-llc/mail-addons/tree/9.0/mailgun
 
 
 Configure mail Aliases for users in client databases
 ----------------------------------------------------
 
-* Owner of database should configure mail Alias for every user in his database including his own:
+* Owner of client database or Administrator should configure mail Alias for every user in his database including his own:
 
- * TODO: how to configure mail Aliases
+ * Open menu ``Settings / Users / Users`` and select User 
+ * Click ``[Edit]`` button
+ * Open ``Preferences`` tab
+ * Edit ``Messaging Alias`` field there
+
 
 Usage
 =====
 
-* Try to create client database as usual:
-* On creating new client database a new mail domain will be created for it on mailgun
+* Try to create client database as usual
+* On creating new client database a new mail domain will be created for it in your account of mailgun.com 
 * This mail domain will be validated using Route53, all necessary dns records will be created
 * In the client database Outgoing mail configuration will be done
 * If you have installed this module https://github.com/it-projects-llc/mail-addons/tree/9.0/mailgun on
-template database as mentioned in ``Configure Incomming mails for clients`` of this instruction then
-your clients should be able receive mails
+template database as mentioned in ``Configuration in template database`` and
+configure mail Aliases as mentioned in ``Configure mail Aliases for users in client databases``
+of this instruction then your clients should be able receive and send mails
