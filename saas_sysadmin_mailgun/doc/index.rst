@@ -78,10 +78,12 @@ Configuration in template database
 ----------------------------------
 
 On Portal:
+
 * Open ``SaaS / SaaS / Plans`` and select the Plan where you want mail feature
 * Click ``[Log in to template DB]``. You should first allow pop-up windows from SaaS Portal in your browser settings.
   
 In template database:
+
 * Activate debug mode
 * Open ``Settings / Technical / Email / Outgoing Mail Servers``
 * Select ``localhost`` configuration line and delete it using ``[Action]`` button
