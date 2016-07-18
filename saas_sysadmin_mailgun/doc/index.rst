@@ -43,7 +43,7 @@ Mailgun
 -------
 
 * On https://mailgun.com create an account
-* Note Secret API key on the main page of your account ``API Keys`` section
+* Note Secret API key on the main page of your account ``API Keys`` section. It will look something like this: key-ff4518c5a238741da42a291ba6fa77fa
 
 SaaS Portal
 -----------
