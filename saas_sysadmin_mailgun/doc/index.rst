@@ -116,4 +116,4 @@ Usage
 * If you have installed this module https://github.com/it-projects-llc/mail-addons/tree/9.0/mailgun on
 template database as mentioned in ``Configuration in template database`` and
 configure mail Aliases as mentioned in ``Configure mail Aliases for users in client databases``
-of this instruction then your clients should be able receive and send mails
+of this instruction then your clients will be able receive and send mails
