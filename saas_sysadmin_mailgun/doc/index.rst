@@ -58,6 +58,7 @@ Here you should:
  If you want your clients to be able to use Incomming mail feature then there should be public IP address
  of your server.
  If you just want your cliets to be able to send mails then there may be any IP address.
+
  * Click ``[Edit]`` button
  * In ``System Admin Settings`` section fill ``AWS Hosted Zone`` field
 
