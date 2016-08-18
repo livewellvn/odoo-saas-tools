@@ -15,8 +15,8 @@ class SignupError(Exception):
 
 
 class SaasPortal(http.Controller):
-
-    @http.route(['/saas_portal/trial_check'], type='json', auth='public', website=True)
+    @http.route(['/saas_portal/trial_check'], type='json', auth='public',
+                website=True)
     def trial_check(self, **post):
         if self.exists_database(post['dbname']):
             return {"error": {"msg": "database already taken"}}
@@ -57,7 +57,9 @@ class SaasPortal(http.Controller):
         plan = request.registry['saas_portal.plan']
         if not plan_id:
             domain = [('state', '=', 'confirmed')]
-            plan_ids = request.registry['saas_portal.plan'].search(request.cr, SUPERUSER_ID, domain)
+            plan_ids = request.registry['saas_portal.plan'].search(request.cr,
+                                                                   SUPERUSER_ID,
+                                                                   domain)
             if plan_ids:
                 plan_id = plan_ids[0]
             else:
@@ -68,7 +70,8 @@ class SaasPortal(http.Controller):
         full_dbname = self.get_full_dbname(dbname)
         return openerp.service.db.exp_db_exist(full_dbname)
 
-    @http.route(['/publisher-warranty/'], type='http', auth='public', website=True)
+    @http.route(['/publisher-warranty/'], type='http', auth='public',
+                website=True)
     def publisher_warranty(self, **post):
         # check addons/mail/update.py::_get_message for arg0 value
         arg0 = post.get('arg0')
