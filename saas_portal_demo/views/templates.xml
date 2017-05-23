@@ -63,9 +63,7 @@
       </xpath>
 
       <xpath expr="//hr[@t-if='product.description_sale']" position="replace">
-        <t t-if="not product.module_name">
-            <hr t-if="product.description_sale" />
-        </t>
+        <hr t-if="product.description_sale and not product.module_name" />
       </xpath>
 
       <xpath expr="//div[@id='product_details']/p[@class='text-muted']" position="replace">
