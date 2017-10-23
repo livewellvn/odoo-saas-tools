@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
 
 ODOO_VERSION = 10
@@ -29,7 +30,7 @@ def log(*args):
     print 'saas.py >>> ' + ', '.join([str(a) for a in args])
 
 # ----------------------------------------------------------
-# Options -x x
+# Options
 # ----------------------------------------------------------
 
 parser = argparse.ArgumentParser(description='''Control script to manage saas system.
@@ -164,7 +165,7 @@ def main():
     plan_id = None
     pid = None
 
-    port_is_open = wait_net_service('127.0.0.1', int(xmlrpc_port), 5)
+    port_is_open = wait_net_service('127.0.0.1', int(xmlrpc_port), 3)
     if port_is_open:
         log('Port is used. Probably, odoo is already running. Let\'s try to use it. It it will fail, you need either stop odoo or pass another port to saas.py via --xmlrpc-port arg')
     else:
@@ -172,7 +173,6 @@ def main():
         pid = spawn_cmd(cmd)
     try:
         port_is_open or wait_net_service('127.0.0.1', int(xmlrpc_port), 30)
-        #wait_net_service('127.0.0.1', int(xmlrpc_port), 30)
 
         if args.get('portal_create'):
             rpc_init_db(args.get('portal_db_name'), new_admin_password=args.get('admin_password'))
@@ -233,8 +233,8 @@ def dropdb(dbname):
     pg_dropdb(dbname)
     # cleanup filestore
     # paths = [os.path.join(datadir, pn, 'filestore', dbname) for pn in 'OpenERP Odoo'.split()]
-    # paths = [os.path.join(datadir, 'filestore', dbname)]
-    # exec_cmd(['rm', '-rf'] + paths)
+    paths = [os.path.join(datadir, 'filestore', dbname)]
+    exec_cmd(['rm', '-rf'] + paths)
 
 
 def cleanup():
@@ -417,17 +417,17 @@ def exec_pg_environ():
     See also http://www.postgresql.org/docs/8.4/static/libpq-envars.html
     """
     env = os.environ.copy()
-    db_user = odoo_config.get('db_user') or os.getenv('DB_ENV_POSTGRES_USER') or os.getenv('RDS_USERNAME')
+    db_user = odoo_config.get('db_user') or os.getenv('DB_ENV_POSTGRES_USER') or os.getenv('RDS_USERNAME') or os.getenv('PGUSER') or 'odoo'
     if db_user:
         env['PGUSER'] = db_user
     db_host = odoo_config.get('db_host') or os.getenv('DB_PORT_5432_TCP_ADDR') or os.getenv('RDS_HOSTNAME')
     if db_host:
         env['PGHOST'] = db_host
-    db_port = odoo_config.get('db_port') or os.getenv('DB_PORT_5432_TCP_PORT') or os.getenv('RDS_PORT')
+    db_port = odoo_config.get('db_port') or os.getenv('DB_PORT_5432_TCP_PORT') or os.getenv('RDS_PORT') or os.getenv('PGPORT') or '5432'
     if db_port:
         env['PGPORT'] = db_port
 
-    db_password = odoo_config.get('db_password') or os.getenv('DB_ENV_POSTGRES_PASSWORD') or os.getenv('RDS_PASSWORD')
+    db_password = odoo_config.get('db_password') or os.getenv('DB_ENV_POSTGRES_PASSWORD') or os.getenv('RDS_PASSWORD') or os.getenv('PGPASSWORD') or 'odoo'
     if db_password:
         env['PGPASSWORD'] = db_password
 

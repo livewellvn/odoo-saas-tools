@@ -1,0 +1,324 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* saas_portal_signup_custom2
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-13 04:27+0000\n"
+"PO-Revision-Date: 2017-07-13 11:30+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en_US\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#. module: saas_portal_signup_custom2
+#: model:mail.template,body_html:saas_portal_signup_custom2.email_template_create_saas
+msgid ""
+"\n"
+"\n"
+"            <p>\n"
+"                Hello ${object.partner_id.name},<br />\n"
+"                Thank you for signing-up with us!<br />\n"
+"                Your new ${object.plan_id.name} account is ready.<br />\n"
+"                Here is the link to access your account:<br />\n"
+"                <a href=\"${object.public_url}\">${object.public_url}</a><br />\n"
+"                You can login using your registered email and password.<br />\n"
+"            </p>\n"
+"            <p>\n"
+"                % if object.trial:\n"
+"                        Your trial will end on ${object.expiration_datetime.split()[0]}.<br />\n"
+"                        Please pay the invoice to continue the ERP subscription.<br />\n"
+"                % else:\n"
+"                        Please pay the invoice to continue the ERP subscription within ${object.plan_id.grace_period} days.<br />\n"
+"                % endif\n"
+"                You can find the invoice when login to: <a href=\"${ctx['my_home']}\">My portal</a><br />\n"
+"                Then click on your name at top right corner -> My Account -> Your Invoices and Payments\n"
+"            </p>\n"
+"\n"
+"            "
+msgstr ""
+"\n"
+"\n"
+"            <p>\n"
+"                Hello ${object.partner_id.name},<br />\n"
+"                Thank you for signing-up with us!<br />\n"
+"                Your new ${object.plan_id.name} account is ready.<br />\n"
+"                Here is the link to access your account:<br />\n"
+"                <a href=\"${object.public_url}\">${object.public_url}</a><br />\n"
+"                You can login using your registered email and password.<br />\n"
+"            </p>\n"
+"            <p>\n"
+"                % if object.trial:\n"
+"                        Your trial will end on ${object.expiration_datetime.split()[0]}.<br />\n"
+"                        Please pay the invoice to continue the ERP subscription.<br />\n"
+"                % else:\n"
+"                        Please pay the invoice to continue the ERP subscription within ${object.plan_id.grace_period} days.<br />\n"
+"                % endif\n"
+"                You can find the invoice when login to: <a href=\"${ctx['my_home']}\">My portal</a><br />\n"
+"                Then click on your name at top right corner -> My Account -> Your Invoices and Payments\n"
+"            </p>\n"
+"\n"
+"            "
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Address"
+msgstr "Address"
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:60
+#, python-format
+msgid "Another user is already registered using this email address."
+msgstr "Another user is already registered using this email address."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.saas_trial_pay
+msgid "Apply"
+msgstr "Apply"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_res_partner_business_reg_no
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Business Registration No."
+msgstr "Business Registration No."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.saas_trial_pay
+msgid "Choose what to do with your trial database"
+msgstr "Choose what to do with your trial database"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "City"
+msgstr "City"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Company Name"
+msgstr "Company Name"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.saas_trial_pay
+msgid "Convert to subscription keeping data"
+msgstr "Convert to subscription keeping data"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Country"
+msgstr "Country"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_res_partner_dnb_number
+msgid "D&B Number"
+msgstr "D&B Number"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "D&amp;B Number ("
+msgstr "D&amp;B Number ("
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Desired web address for your system"
+msgstr "Desired web address for your system"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "ERP Package"
+msgstr "ERP Package"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Fax"
+msgstr "Fax"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.view_website_config_settings
+msgid "Follow"
+msgstr "Follow"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Get a D&amp;B Number"
+msgstr "Get a D&amp;B Number"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.view_website_config_settings
+msgid "Google reCAPTCHA"
+msgstr "Google reCAPTCHA"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_website_config_settings_google_recaptcha_secret_key
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_website_google_recaptcha_secret_key
+msgid "Google reCAPTCHA Secret Key"
+msgstr "Google reCAPTCHA Secret Key"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_website_config_settings_google_recaptcha_site_key
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_website_google_recaptcha_site_key
+msgid "Google reCAPTCHA Site Key"
+msgstr "Google reCAPTCHA Site Key"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "I agree with the"
+msgstr "I agree with the"
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:39
+#, python-format
+msgid "Incorrect. Try again"
+msgstr "Incorrect. Try again"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Lorem ipsum sodales sapien gravida ultricies sapien lectus ornare amet gravida enim urna integer bibendum ut risus arcu metus sem, proin ut justo eu. Rutrum eu rutrum, massa sodales sit tempus — curabitur non bibendum nulla pellentesque metus. Non, maecenas molestie nulla nam curabitur, nulla justo odio integer ipsum — ultricies pharetra. Enim: in non curabitur sapien molestie in non cursus ornare auctor. Integer, nulla nam malesuada tempus nec quisque duis cursus nec odio rutrum nulla. Rutrum tellus diam ultricies amet proin tellus urna, ut quam sapien orci."
+msgstr "Lorem ipsum sodales sapien gravida ultricies sapien lectus ornare amet gravida enim urna integer bibendum ut risus arcu metus sem, proin ut justo eu. Rutrum eu rutrum, massa sodales sit tempus — curabitur non bibendum nulla pellentesque metus. Non, maecenas molestie nulla nam curabitur, nulla justo odio integer ipsum — ultricies pharetra. Enim: in non curabitur sapien molestie in non cursus ornare auctor. Integer, nulla nam malesuada tempus nec quisque duis cursus nec odio rutrum nulla. Rutrum tellus diam ultricies amet proin tellus urna, ut quam sapien orci."
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:108
+#, python-format
+msgid "Only letters or numbers are allowed in domain."
+msgstr "Only letters or numbers are allowed in domain."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Paid Subscription"
+msgstr "Paid Subscription"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model,name:saas_portal_signup_custom2.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:112
+#, python-format
+msgid "Passwords do not match; please retype them."
+msgstr "Passwords do not match; please retype them."
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:110
+#, python-format
+msgid "Please enter a valid email address."
+msgstr "Please enter a valid email address."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup
+msgid "Please fill out this field."
+msgstr "Vui lòng điền thông tin."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup
+msgid "Please select an item in the lis."
+msgstr "Vui lòng chọn danh sách"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Postal code"
+msgstr "Postal code"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.saas_trial_pay
+msgid "Replace with new blank database"
+msgstr "Replace with new blank database"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Select"
+msgstr "Select"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Select a package"
+msgstr "Select a package"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "State"
+msgstr "State"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model.fields,field_description:saas_portal_signup_custom2.field_res_partner_tax_code
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Tax code"
+msgstr "Tax code"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Tel."
+msgstr "Tel."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Terms and Conditions"
+msgstr "Terms and Conditions"
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:111
+#, python-format
+msgid "The form was not properly filled in."
+msgstr "The form was not properly filled in."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Trial"
+msgstr "Trial"
+
+#. module: saas_portal_signup_custom2
+#: code:addons/saas_portal_signup_custom2/controllers/main.py:109
+#, python-format
+msgid "Web address exists, please choose another web address"
+msgstr "Web address exists, please choose another web address"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model,name:saas_portal_signup_custom2.model_website
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "Website"
+msgstr "Website"
+
+#. module: saas_portal_signup_custom2
+#: model:mail.template,subject:saas_portal_signup_custom2.email_template_create_saas
+msgid "Your ${object.plan_id.name} account is ready"
+msgstr "Your ${object.plan_id.name} account is ready"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.view_website_config_settings
+msgid "reCAPTCHA Secret key"
+msgstr "reCAPTCHA Secret key"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.view_website_config_settings
+msgid "reCAPTCHA Site key"
+msgstr "reCAPTCHA Site key"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model,name:saas_portal_signup_custom2.model_saas_portal_plan
+msgid "saas_portal.plan"
+msgstr "saas_portal.plan"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.view_website_config_settings
+msgid "the instructions"
+msgstr "the instructions"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.view_website_config_settings
+msgid "to create your keys."
+msgstr "to create your keys."
+
+#. module: saas_portal_signup_custom2
+#: model:ir.model,name:saas_portal_signup_custom2.model_website_config_settings
+msgid "website.config.settings"
+msgstr "website.config.settings"
+
+#. module: saas_portal_signup_custom2
+#: model:ir.ui.view,arch_db:saas_portal_signup_custom2.signup_fields
+msgid "your-company-name"
+msgstr "your-company-name"
