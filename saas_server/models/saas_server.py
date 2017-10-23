@@ -178,16 +178,16 @@ class SaasServerClient(models.Model):
                 user = client_env['res.users'].browse(SUPERUSER_ID)
 
             owner_user.pop('sector_id')
-            child_ids = owner_user.pop('child_ids')
             sector_data = owner_user.pop('sector_data')[0][2]
+
+            #_logger.error("sector_data: %s" % sector_data)
+
+            #kiu Todo:
+            if not sector_data['name']:
+                sector_data['name'] = 'None'
+
             sector = client_env['res.partner.sector'].create(sector_data)
             vals = owner_user
-
-            lang_code = owner_user.get('lang')
-            if lang_code:
-                mods = client_env['ir.module.module'].search([('state', '=', 'installed')])
-                mods.with_context().update_translations(lang_code)
-
             vals.update({
                 'oauth_provider_id': oauth_provider.id,
                 'oauth_uid': portal_owner_uid,
@@ -199,40 +199,34 @@ class SaasServerClient(models.Model):
                 self.env['res.country.state'].browse(owner_user['state_id']).id or None,
             })
 
+            #kiu Todo:
+            if not vals['password']:
+                vals['password'] = random_password()
+
             user.write(vals)
 
             main_company = client_env.ref('base.main_company')
-            company_name = owner_user.get('company_name')
             if owner_user.get('company_name'):
-                main_company.partner_id.update({
-                    'name': owner_user['company_name'],
-                    'email': owner_user['email'],
-                    'company_name': owner_user.get('company_name'),
-                    'website': owner_user.get('website'),
-                    'phone': owner_user.get('phone'),
-                    'fax': owner_user.get('fax'),
-                    'city': owner_user.get('city'),
-                    'street': owner_user.get('street'),
-                    'vat': owner_user.get('vat'),
-                    'zip': owner_user.get('zip'),
-                    'country_id': owner_user.get('country_id') and self.env['res.country'].browse(owner_user['country_id']) and \
-                    self.env['res.country'].browse(owner_user['country_id']).id or None,
-                    'state_id': owner_user.get('state_id') and self.env['res.country.state'].browse(owner_user['state_id']) and \
-                    self.env['res.country.state'].browse(owner_user['state_id']).id or None,
-                    'is_company': True,
-                    'child_ids': child_ids,
-                    'business_reg_no': owner_user.get('business_reg_no'),
-                    'dnb_number': owner_user.get('dnb_number'),
-                    'tax_code': owner_user.get('tax_code'),
-                    'account_currency_id': owner_user.get('account_currency_id') and self.env['res.currency'].browse(owner_user['account_currency_id']) and \
-                    self.env['res.currency'].browse(owner_user['account_currency_id']).id or None,
-                    'establishment_year': owner_user.get('establishment_year'),
-                    'previous_year_turnover': owner_user.get('previous_year_turnover'),
-                    'sector_id': sector.id,
-                })
-                main_company.partner_id.update({'child_ids': [(4, user.partner_id.id, 0)]})
+                # main_company.partner_id.update({
+                #     'name': owner_user['company_name'],
+                #     'email': owner_user['email'],
+                #     'company_name': owner_user.get('company_name'),
+                #     'website': owner_user.get('website'),
+                #     'phone': owner_user.get('phone'),
+                #     'fax': owner_user.get('fax'),
+                #     'city': owner_user.get('city'),
+                #     'street': owner_user.get('street'),
+                #     'vat': owner_user.get('vat'),
+                #     'zip': owner_user.get('zip'),
+                #     'country_id': owner_user.get('country_id') and self.env['res.country'].browse(owner_user['country_id']) and \
+                #     self.env['res.country'].browse(owner_user['country_id']).id or None,
+                #     'state_id': owner_user.get('state_id') and self.env['res.country.state'].browse(owner_user['state_id']) and \
+                #     self.env['res.country.state'].browse(owner_user['state_id']).id or None,
+                #     'is_company': True,
+
+                # })
                 main_company.update({
-                    # 'partner_id': user.partner_id.id,
+                    'partner_id': user.partner_id.id,
                     'company_registry': owner_user.get('business_reg_no'),
                     'currency_id': owner_user.get('account_currency_id') and self.env['res.currency'].browse(owner_user['account_currency_id']) and \
                     self.env['res.currency'].browse(owner_user['account_currency_id']).id or None,
@@ -264,7 +258,9 @@ class SaasServerClient(models.Model):
 
     @api.model
     def update_all(self):
-        self.sudo().search([]).update()
+        #kiu Todo:
+        #self.sudo().search([]).update()
+        self.sudo().search([('state','!=','deleted')]).update()
 
     @api.multi
     def update_one(self):
