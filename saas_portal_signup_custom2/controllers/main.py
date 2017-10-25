@@ -103,9 +103,13 @@ class AuthSignupHome(auth_signup.controllers.main.AuthSignupHome):
         if not qcontext.get('sectors', False):
             qcontext['sectors'] = request.env['res.partner.sector'].sudo().search([])
         if not qcontext.get('company_sizes', False):
-            qcontext['company_sizes'] = request.env['res.partner']._get_company_sizes()
+            #qcontext['company_sizes'] = request.env['res.partner']._get_company_sizes()
+            qcontext['company_sizes'] = dict(request.env['res.partner']._columns['company_sizes'].selection).get(
+            request.env['res.partner'].company_sizes)
         if not qcontext.get('genders', False):
-            qcontext['genders'] = request.env['res.partner']._get_genders()
+            #qcontext['genders'] = request.env['res.partner']._get_genders()
+            qcontext['genders'] = dict(request.env['res.partner']._columns['genders'].selection).get(
+            request.env['res.partner'].genders)
         if not qcontext.get('currencies', False):
             qcontext['currencies'] = request.env['res.currency'].search([])
         return qcontext
