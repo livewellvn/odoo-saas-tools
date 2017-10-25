@@ -73,12 +73,12 @@ msgid "Year of establishment"
 msgstr "Năm thành lập"
 
 #. module: res_partner_custom2
-#: selection:res_partner_custom2.company_size,type:0
+#: selection:res.partner,company_size:0
 msgid "< 5 employees"
 msgstr "< 5 nhân viên"
 
 #. module: res_partner_custom2
-#: selection:res_partner_custom2.company_size,type:1
+#: selection:res.partner,company_size:1
 msgid "5 - 20 employees"
 msgstr "5 - 20 nhân viên"
 
