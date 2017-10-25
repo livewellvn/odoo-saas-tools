@@ -47,12 +47,17 @@ class AuthSignupHome(auth_signup.controllers.main.AuthSignupHome):
 
         company_size = kw.get('company_size')
         if company_size:
-            sizes_dict = dict(request.env['res.partner']._get_company_sizes())
+            #sizes_dict = dict(request.env['res.partner']._get_company_sizes())
+            sizes_dict = dict(request.env['res.partner']._columns['company_sizes'].selection).get(
+                request.env['res.partner'].company_sizes)
+
             qcontext['prev_sel_company_size'] = (company_size, sizes_dict[company_size])
 
         gender = kw.get('gender')
         if gender:
-            genders_dict = dict(request.env['res.partner']._get_genders())
+            #genders_dict = dict(request.env['res.partner']._get_genders())
+            genders_dict = dict(request.env['res.partner']._columns['genders'].selection).get(
+                request.env['res.partner'].genders)
             qcontext['prev_sel_gender'] = (gender, genders_dict[gender])
 
         if kw.has_key('g-recaptcha-response') and not request.website.recaptcha_siteverify(kw.get('g-recaptcha-response')):
