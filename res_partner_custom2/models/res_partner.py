@@ -27,22 +27,22 @@ class Partner(models.Model):
         ('female', 'Female')
         ], string='Gender', translate=True)
 
-    #@api.model
-    #def _get_company_sizes(self):
-    #    company_sizes = [
-    #            ('1-5', '< 5 employees'),
-    #            ('5-20', '5 - 20 employees'),
-    #            ('20-50', '20 - 50 employees'),
-    #            ('50-250', '20 - 250 employees'),
-    #            ('250-over', '> 250 employees'),
-    #            ]
+    @api.model
+    def _get_company_sizes(self):
+        company_sizes = [
+                ('1-5', '< 5 employees'),
+                ('5-20', '5 - 20 employees'),
+                ('20-50', '20 - 50 employees'),
+                ('50-250', '20 - 250 employees'),
+                ('250-over', '> 250 employees'),
+                ]
 
-    #    return company_sizes
+        return company_sizes
 
-    #def _get_genders(self):
-    #    genders = [
-    #            ('male', 'Male'),
-    #            ('female', 'Female'),
-    #            ]
+    def _get_genders(self):
+        genders = [
+                ('male', 'Male'),
+                ('female', 'Female'),
+                ]
 
-    #    return genders
+        return genders

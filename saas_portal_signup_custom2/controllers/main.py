@@ -48,16 +48,13 @@ class AuthSignupHome(auth_signup.controllers.main.AuthSignupHome):
         company_size = kw.get('company_size')
         if company_size:
             #sizes_dict = dict(request.env['res.partner']._get_company_sizes())
-            sizes_dict = dict(request.env['res.partner']._columns['company_sizes'].selection).get(
-                request.env['res.partner'].company_sizes)
-
+            sizes_dict = dict(request.env['res.partner']._fields["company_size"].selection)
             qcontext['prev_sel_company_size'] = (company_size, sizes_dict[company_size])
 
         gender = kw.get('gender')
         if gender:
             #genders_dict = dict(request.env['res.partner']._get_genders())
-            genders_dict = dict(request.env['res.partner']._columns['genders'].selection).get(
-                request.env['res.partner'].genders)
+            genders_dict = dict(request.env['res.partner']._fields["gender"].selection)
             qcontext['prev_sel_gender'] = (gender, genders_dict[gender])
 
         if kw.has_key('g-recaptcha-response') and not request.website.recaptcha_siteverify(kw.get('g-recaptcha-response')):
@@ -104,12 +101,16 @@ class AuthSignupHome(auth_signup.controllers.main.AuthSignupHome):
             qcontext['sectors'] = request.env['res.partner.sector'].sudo().search([])
         if not qcontext.get('company_sizes', False):
             #qcontext['company_sizes'] = request.env['res.partner']._get_company_sizes()
-            qcontext['company_sizes'] = dict(request.env['res.partner']._columns['company_sizes'].selection).get(
-            request.env['res.partner'].company_sizes)
+            qcontext['company_sizes'] = request.env['res.partner']._fields["company_size"].selection
+
+            #test1 = request.env['res.partner']
+#            qcontext['company_sizes'] = dict(request.env['res.partner']._columns['company_sizes'].selection).get(
+#            request.env['res.partner'].company_sizes)
         if not qcontext.get('genders', False):
             #qcontext['genders'] = request.env['res.partner']._get_genders()
-            qcontext['genders'] = dict(request.env['res.partner']._columns['genders'].selection).get(
-            request.env['res.partner'].genders)
+            qcontext['genders'] = request.env['res.partner']._fields["gender"].selection
+#            qcontext['genders'] = dict(request.env['res.partner']._columns['genders'].selection).get(
+#            request.env['res.partner'].genders)
         if not qcontext.get('currencies', False):
             qcontext['currencies'] = request.env['res.currency'].search([])
         return qcontext
