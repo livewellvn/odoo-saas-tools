@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
-# kiu
+# kiu: Todo
 from odoo.tools.translate import _
 
 class Partner(models.Model):
