@@ -182,7 +182,7 @@ class SaasServerClient(models.Model):
 
             #_logger.error("sector_data: %s" % sector_data)
 
-            #kiu Todo:
+            # livewell Todo:
             if not sector_data['name']:
                 sector_data['name'] = 'None'
 
@@ -199,7 +199,7 @@ class SaasServerClient(models.Model):
                 self.env['res.country.state'].browse(owner_user['state_id']).id or None,
             })
 
-            #kiu Todo:
+            # livewell Todo:
             if not vals['password']:
                 vals['password'] = random_password()
 
@@ -258,7 +258,7 @@ class SaasServerClient(models.Model):
 
     @api.model
     def update_all(self):
-        #kiu Todo:
+        # livewell Todo:
         #self.sudo().search([]).update()
         self.sudo().search([('state','!=','deleted')]).update()
 
