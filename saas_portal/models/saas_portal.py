@@ -282,7 +282,8 @@ class SaasPortalPlan(models.Model):
             'partner_id': partner_id,
             'trial': trial,
             'support_team_id': support_team_id,
-            'product_id': product_id,
+            # livewell Todo:
+            'product_id': product_id or self.product_variant_ids.id,
         }
         client = None
         if client_id:
