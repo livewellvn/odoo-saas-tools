@@ -8,27 +8,162 @@
             <field name="auto_delete" eval="True"/>
             <field name="lang">${object.partner_id.lang}</field>
             <field name="body_html"><![CDATA[
+<table class="body"
+       style="-premailer-width: 100%; background: #f6f6f6; border-collapse: separate !important; box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%"
+       bgcolor="#f6f6f6" width="100%">
+    <tbody>
+    <tr>
+        <td style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top"
+            valign="top"></td>
+        <td class="container"
+            style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 580px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px; vertical-align: top; width: 580px"
+            valign="top">
 
-            <p>
-                Hello ${object.partner_id.name},<br />
-                Thank you for signing-up with us!<br />
-                Your new ${object.plan_id.name} account is ready.<br />
-                Here is the link to access your account:<br />
-                <a href="${object.public_url}">${object.public_url}</a><br />
-                You can login using your registered email and password.<br />
+            <div class="content"
+                 style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 580px; padding: 10px">
+
+                <table class="main"
+                       style="-premailer-width: 100%; box-sizing: border-box; width: 100%"
+                       width="100%">
+                    <tbody>
+
+                    <tr>
+
+                        <td bgcolor="#f6f6f6" class="wrapper"
+                            style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px; vertical-align: top"
+                            valign="top" align="left">
+
+                            <a href="https://erp.kiuglobal.com"><img width="87" height="40"
+                                                                   src="https://kiuglobal.com/images/logo-email.png"
+                                                                   alt="KiuERP"/></a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="wrapper"
+                            style="background: #fff; border: 1px solid #e9e9e9; box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px; vertical-align: top"
+                            valign="top" bgcolor="#fff">
+
+                            <table style="-premailer-width: 100%;"
+                                   width="100%">
+
+                                <tbody>
+
+                                <tr>
+                                    <td style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top"
+                                        valign="top">
+
+										<p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+                Hello ${object.partner_id.name},</p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+				Thank you for signing-up with us!</p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+                Your new ${object.plan_id.name} account is ready.</p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+                Here is the link to access your account:</p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px"><a href="${object.public_url}">${object.public_url}</a></p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+                You can login using your registered email and password.
             </p>
-            <p>
+            <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
                 % if object.trial:
-                        Your trial will end on ${object.expiration_datetime.split()[0]}.<br />
-                        Please pay the invoice to continue the ERP subscription.<br />
+                        Your trial will end on ${object.expiration_datetime.split()[0]}.<br>
+                        Please pay the invoice to continue the ERP subscription.
                 % else:
-                        Please pay the invoice to continue the ERP subscription within ${object.plan_id.grace_period} days.<br />
+                        Please pay the invoice to continue the ERP subscription within ${object.plan_id.grace_period} days.
                 % endif
-                You can find the invoice when login to: <a href="${ctx['my_home']}">My portal</a><br />
-                Then click on your name at top right corner -> My Account -> Your Invoices and Payments
+				</p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+                You can find the invoice when login to: <a href="${ctx['my_home']}">My portal</a>.</p>
+                <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; font-weight: normal; margin: 0 0 15px">
+                Then click on your name at top right corner -&gt; My Account -&gt; Your Invoices and Payments.
             </p>
 
-            ]]></field>
+
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+
+                                    <td style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top"
+                                        valign="top">
+
+                                        <p style="font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 12px; margin: 0 0 15px">
+                                            <b>KiuERP Team</b><br><br>Call Center: 1900 636961<br>Email: <a href='mailto:help@kiuglobal.com'>help@kiuglobal.com</a>
+                                        </p>
+
+
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#f6f6f6" class="wrapper"
+                            style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px; vertical-align: top"
+                            valign="top">
+
+                            <table style="-premailer-width: 100%; border-collapse: collapse; margin: 0;" width="100%"
+                                   cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td valign="top" align="left">
+
+                                        © 2017 Kiu. All Rights Reserved.<br>
+                                        <b>Vietnam:</b> 55 Road 1, F361<br>
+                                        An Duong Street, Tay Ho, Hanoi<br>
+                                        <b>Call Center:</b> 1900 636961
+
+                                    </td>
+
+                                    <td valign="top" align="right">
+
+                                        <span style="line-height: 20px; font-size: 10px;"><a
+                                                href="https://www.facebook.com/kiuasia/"><img width="24" height="24"
+                                                                                              src="https://pay.kiuasia.com/images/icons/facebook.png"
+                                                                                              alt="fb"/></a>&nbsp;</span>
+                                        <span style="line-height: 20px; font-size: 10px;"><a
+                                                href="https://twitter.com/KiuAsia"><img width="24" height="24"
+                                                                                        src="https://pay.kiuasia.com/images/icons/twitter.png"
+                                                                                        alt="twit"/></a>&nbsp;</span>
+                                        <span style="line-height: 20px; font-size: 10px;"><a
+                                                href="https://www.youtube.com/channel/UCOTSMz-MGTO7st8XS-4iJmQ"><img
+                                                width="24" height="24"
+                                                src="https://pay.kiuasia.com/images/icons/youtube.png" alt="yt"/></a>&nbsp;</span><br>
+                                        <b>USA:</b> 77 Van Ness Ave Ste 101<br>San Francisco, CA 94102
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </td>
+        <td style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top"
+            valign="top"></td>
+    </tr>
+
+    </tbody>
+</table>
+]]></field>
         </record>
 
 </odoo>

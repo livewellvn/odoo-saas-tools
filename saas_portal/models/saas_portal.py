@@ -339,10 +339,13 @@ class SaasPortalPlan(models.Model):
             url = '/my/home'
 
         # send email
+        # livewell: send account info to user
         template = self.on_create_email_template
         if template:
             email_ctx = {
-                'my_home': 'http://{}/my/home'.format(self.env['ir.config_parameter'].get_param('saas_portal.base_saas_domain')),
+                #'my_home': 'http://{}/my/home'.format(self.env['ir.config_parameter'].get_param('saas_portal.base_saas_domain')),
+                'my_home': '{}/my/home'.format(
+                    self.env['ir.config_parameter'].get_param('web.base.url')),
             }
             client.with_context(email_ctx).message_post_with_template(template.id, composition_mode='comment')
 

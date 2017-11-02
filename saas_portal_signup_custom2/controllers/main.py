@@ -101,18 +101,38 @@ class AuthSignupHome(auth_signup.controllers.main.AuthSignupHome):
             qcontext['sectors'] = request.env['res.partner.sector'].sudo().search([])
         if not qcontext.get('company_sizes', False):
             #qcontext['company_sizes'] = request.env['res.partner']._get_company_sizes()
-            qcontext['company_sizes'] = request.env['res.partner']._fields["company_size"].selection
+            company_sizes = request.env['res.partner']._fields["company_size"].selection
+            new_company_sizes = []
+            for company_size in company_sizes:
+                company_size_temp = list(company_size)
+                company_size_temp[1] = _(company_size_temp[1])
+
+                new_company_sizes.append(tuple(company_size_temp))
+
+            qcontext['company_sizes'] = new_company_sizes
 
             #test1 = request.env['res.partner']
 #            qcontext['company_sizes'] = dict(request.env['res.partner']._columns['company_sizes'].selection).get(
 #            request.env['res.partner'].company_sizes)
         if not qcontext.get('genders', False):
             #qcontext['genders'] = request.env['res.partner']._get_genders()
-            qcontext['genders'] = request.env['res.partner']._fields["gender"].selection
-#            qcontext['genders'] = dict(request.env['res.partner']._columns['genders'].selection).get(
-#            request.env['res.partner'].genders)
+            genders = request.env['res.partner']._fields["gender"].selection
+            new_genders = []
+            for gender in genders:
+                #we get translation only when field is read
+                gender_temp = list(gender)
+                gender_temp[1] = _(gender_temp[1])
+                new_genders.append(tuple(gender_temp))
+
+            qcontext['genders'] = new_genders
+#
         if not qcontext.get('currencies', False):
             qcontext['currencies'] = request.env['res.currency'].search([])
+
+        # livewell Todo: fix translate
+        if not qcontext.get('translatable', False):
+            qcontext['translatable'] = True
+
         return qcontext
 
     def get_saas_domain(self):

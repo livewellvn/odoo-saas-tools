@@ -16,7 +16,7 @@
         "base",
         'partner_sector',
         'partner_contact_birthdate',
-        'partner_contact_gender',
+        'partner_contact_personal_information_page',
     ],
     "external_dependencies": {"python": [], "bin": []},
     "data": [
