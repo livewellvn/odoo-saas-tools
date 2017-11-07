@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 from odoo import api, fields, models
 from odoo.tools.translate import _
+=======
+from odoo import api, fields, models, _
+
+>>>>>>> 03d8b6551c263a53e47d8438ab36b7773e2c8843
 
 class Partner(models.Model):
     _inherit = "res.partner"
@@ -34,7 +39,11 @@ class Partner(models.Model):
                 ('5-20', _('5 - 20 employees')),
                 ('20-50', _('20 - 50 employees')),
                 ('50-250', _('20 - 250 employees')),
+<<<<<<< HEAD
                 ('250-over', _('> 250 employees'))
+=======
+                ('250-over', _('> 250 employees')),
+>>>>>>> 03d8b6551c263a53e47d8438ab36b7773e2c8843
                 ]
 
         return company_sizes
@@ -42,7 +51,11 @@ class Partner(models.Model):
     def _get_genders(self):
         genders = [
                 ('male', _('Male')),
+<<<<<<< HEAD
                 ('female', _('Female'))
+=======
+                ('female', _('Female')),
+>>>>>>> 03d8b6551c263a53e47d8438ab36b7773e2c8843
                 ]
 
         return genders
